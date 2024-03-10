@@ -19,13 +19,13 @@ const config: Config = {
         calsans: ["var(--font-calsans)"],
       },
       animation: {
-        "fade-in": "fade-in 3s ease-in-out forwards",
+        "delayed-fade-in": "delayed-fade-in 3s ease-in-out forwards",
         title: "title 3s ease-out forwards",
-        "fade-left": "fade-left 3s ease-in-out forwards",
-        "fade-right": "fade-right 3s ease-in-out forwards",
+        "delayed-fade-left": "delayed-fade-left 3s ease-in-out forwards",
+        "delayed-fade-right": "delayed-fade-right 3s ease-in-out forwards",
       },
       keyframes: {
-        "fade-in": {
+        "delayed-fade-in": {
           "0%": {
             opacity: "0%",
           },
@@ -36,7 +36,7 @@ const config: Config = {
             opacity: "100%",
           },
         },
-        "fade-left": {
+        "delayed-fade-left": {
           "0%": {
             transform: "translateX(100%)",
             opacity: "0%",
@@ -50,7 +50,7 @@ const config: Config = {
             opacity: "0%",
           },
         },
-        "fade-right": {
+        "delayed-fade-right": {
           "0%": {
             transform: "translateX(-100%)",
             opacity: "0%",
@@ -86,6 +86,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animated")],
 }
 export default config
