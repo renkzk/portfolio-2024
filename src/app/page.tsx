@@ -34,7 +34,7 @@ export default function Home() {
 
         {/* Scroll down button */}
         <button className="animate-fade-in text-sm duration-500 text-zinc-500 hover:text-zinc-300">
-          {/* Scroll down » */}
+          Scroll down »
         </button>
       </div>
     </main>

@@ -1,5 +1,7 @@
+import { HeroParallax } from "@/components/ui/hero-parallax"
+import { products } from "@/components/ui/products.placeholder"
 import React from "react"
 
 export default function Projects() {
-  return <h1>Projects</h1>
+  return <HeroParallax products={products} />
 }
