@@ -3,19 +3,13 @@ import React from "react"
 import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { Project } from "@prisma/client"
 
-export const HeroParallax = ({
-  products,
-}: {
-  products: {
-    title: string
-    link: string
-    thumbnail: string
-  }[]
-}) => {
+export const HeroParallax = ({ products }: { products: Project[] }) => {
   const firstRow = products.slice(0, 5)
   const secondRow = products.slice(5, 10)
   const thirdRow = products.slice(10, 15)
+
   const ref = React.useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -106,11 +100,7 @@ export const ProductCard = ({
   product,
   translate,
 }: {
-  product: {
-    title: string
-    link: string
-    thumbnail: string
-  }
+  product: Project
   translate: MotionValue<number>
 }) => {
   return (
@@ -124,7 +114,7 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-96 w-[30rem] relative flex-shrink-0"
     >
-      <Link href={product.link} className="block group-hover/product:shadow-2xl ">
+      <Link href={String(product.id)} className="block group-hover/product:shadow-2xl ">
         <Image
           src={product.thumbnail}
           height="600"
