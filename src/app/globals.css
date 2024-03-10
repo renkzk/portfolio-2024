@@ -26,3 +26,18 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
 }
+
+/* Scrollbar styling */
+/* For Webkit based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* adjust width as needed */
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* make the background transparent */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* set the color for the thumb */
+  border-radius: 6px; /* optional: add rounded corners to the thumb */
+}
