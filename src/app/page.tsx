@@ -8,7 +8,7 @@ export default function Home() {
   const appRoutes = Object.values(AppRoute).filter((route) => route !== AppRoute.Home)
 
   return (
-    <main className="relative h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/25 to-black">
+    <main className="h-screen overflow-hidden">
       {/* Particles Background */}
       <Particles
         className="absolute inset-0 -z-10 animate-delayed-fade-in"
