@@ -3,9 +3,9 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        // used to get data placeholder, to remove when done
-        protocol: "https",
-        hostname: "aceternity.com",
+        // localhost
+        protocol: "http",
+        hostname: "localhost",
       },
     ],
   },
