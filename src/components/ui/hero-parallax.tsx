@@ -58,22 +58,18 @@ export const HeroParallax = ({ products }: { products: Project[] }) => {
         className=""
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard product={product} translate={translateX} key={product.title} />
+          {firstRow.map((product, i) => (
+            <ProductCard product={product} translate={translateX} key={i} />
           ))}
         </motion.div>
         <motion.div className="flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
+          {secondRow.map((product, i) => (
+            <ProductCard product={product} translate={translateXReverse} key={i} />
           ))}
         </motion.div>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard product={product} translate={translateX} key={product.title} />
+          {thirdRow.map((product, i) => (
+            <ProductCard product={product} translate={translateX} key={i} />
           ))}
         </motion.div>
       </motion.div>
@@ -111,7 +107,6 @@ export const ProductCard = ({
       whileHover={{
         y: -20,
       }}
-      key={product.title}
       className="group/product h-96 w-[30rem] relative flex-shrink-0"
     >
       <Link href={String(product.id)} className="block group-hover/product:shadow-2xl ">
@@ -121,6 +116,7 @@ export const ProductCard = ({
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
+          quality={100}
         />
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
