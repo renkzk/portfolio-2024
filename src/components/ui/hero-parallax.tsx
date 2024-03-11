@@ -108,7 +108,11 @@ export const ProductCard = ({
       }}
       className="group/product h-96 w-[33rem] relative flex-shrink-0"
     >
-      <Link href={String(product.id)} className="block group-hover/product:shadow-2xl ">
+      <Link
+        href={String(product.id)}
+        // disabled by pointer-events-none
+        className="block group-hover/product:shadow-2xl pointer-events-none "
+      >
         <Image
           src={product.thumbnail}
           height="1000"
