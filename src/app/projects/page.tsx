@@ -2,6 +2,8 @@ import { HeroParallax } from "@/components/ui/hero-parallax"
 import NavigationBar from "@/components/ui/navigation-bar"
 import prisma from "../../../prisma/database"
 import { duplicateArrayUntilMinimumLength } from "@/utils/array-utils"
+import { Suspense } from "react"
+import PageLoader from "@/components/ui/page-loader"
 
 export default async function Projects() {
   let projects = await prisma.project.findMany()
@@ -14,7 +16,9 @@ export default async function Projects() {
   return (
     <>
       <NavigationBar />
-      <HeroParallax products={projects} />
+      <Suspense fallback={<PageLoader />}>
+        <HeroParallax products={projects} />
+      </Suspense>
     </>
   )
 }
