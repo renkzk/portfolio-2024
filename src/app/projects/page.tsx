@@ -1,6 +1,6 @@
 import { HeroParallax } from "@/components/ui/hero-parallax"
 import NavigationBar from "@/components/ui/navigation-bar"
-import prisma from "@/prisma/database"
+import prisma from "../../../prisma/database"
 import { duplicateArrayUntilMinimumLength } from "@/utils/array-utils"
 
 export default async function Projects() {
