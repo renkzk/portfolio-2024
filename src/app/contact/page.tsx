@@ -32,7 +32,12 @@ export default function Contact() {
       <NavigationBar />
       <div className="flex flex-wrap justify-center items-center h-screen">
         {contactOptions.map((contact) => (
-          <Link target="_blank" key={contact.link} href={contact.link}>
+          <Link
+            target="_blank"
+            key={contact.link}
+            href={contact.link}
+            className="animate-fade"
+          >
             <PinContainer title={contact.link} href={contact.link}>
               <ContactCard
                 title={contact.title}
