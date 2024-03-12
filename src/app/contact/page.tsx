@@ -30,20 +30,11 @@ export default function Contact() {
   return (
     <>
       <NavigationBar />
-      <div className="flex flex-wrap justify-center items-center h-screen">
+      <div className="h-screen overflow-hidden flex flex-wrap justify-center items-center">
         {contactOptions.map((contact) => (
-          <Link
-            target="_blank"
-            key={contact.link}
-            href={contact.link}
-            className="animate-fade"
-          >
+          <Link target="_blank" key={contact.link} href={contact.link} className="animate-fade">
             <PinContainer title={contact.link} href={contact.link}>
-              <ContactCard
-                title={contact.title}
-                icon={contact.icon}
-                backgroundColor={contact.backgroundColor}
-              />
+              <ContactCard title={contact.title} icon={contact.icon} backgroundColor={contact.backgroundColor} />
             </PinContainer>
           </Link>
         ))}

@@ -18,34 +18,16 @@ export const HeroParallax = ({ products }: { products: Project[] }) => {
 
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 }
 
-  const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
-    springConfig
-  )
-  const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
-    springConfig
-  )
-  const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-    springConfig
-  )
-  const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-    springConfig
-  )
-  const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-    springConfig
-  )
-  const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
-    springConfig
-  )
+  const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 1000]), springConfig)
+  const translateXReverse = useSpring(useTransform(scrollYProgress, [0, 1], [0, -1000]), springConfig)
+  const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [15, 0]), springConfig)
+  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.2], [0.2, 1]), springConfig)
+  const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), springConfig)
+  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 500]), springConfig)
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[200vh] sm:h-[315vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -61,12 +43,12 @@ export const HeroParallax = ({ products }: { products: Project[] }) => {
             <ProductCard product={product} translate={translateX} key={i} />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row mb-20 space-x-20 ">
           {secondRow.map((product, i) => (
             <ProductCard product={product} translate={translateXReverse} key={i} />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+        <motion.div className="flex flex-row-reverse mb-20 space-x-reverse space-x-20">
           {thirdRow.map((product, i) => (
             <ProductCard product={product} translate={translateX} key={i} />
           ))}
@@ -83,21 +65,14 @@ export const Header = () => {
         renkzk/ <br /> Developer Portfolio
       </h1>
       <p className=" max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        Fueled by a passion for innovation, I craft digital experiences through meticulous
-        code and creative problem-solving. Elevating ideas to reality with a commitment to
-        excellence in every line of code.
+        Fueled by a passion for innovation, I craft digital experiences through meticulous code and creative
+        problem-solving. Elevating ideas to reality with a commitment to excellence in every line of code.
       </p>
     </div>
   )
 }
 
-export const ProductCard = ({
-  product,
-  translate,
-}: {
-  product: Project
-  translate: MotionValue<number>
-}) => {
+export const ProductCard = ({ product, translate }: { product: Project; translate: MotionValue<number> }) => {
   return (
     <motion.div
       style={{
@@ -106,7 +81,7 @@ export const ProductCard = ({
       whileHover={{
         y: -20,
       }}
-      className="group/product h-96 w-[33rem] relative flex-shrink-0"
+      className="group/product sm:h-[300px] sm:w-[420px] h-[150px] w-[300px] relative flex-shrink-0"
     >
       <Link
         href={String(product.id)}
@@ -124,9 +99,7 @@ export const ProductCard = ({
         />
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">{product.title}</h2>
     </motion.div>
   )
 }
