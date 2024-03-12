@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-      <body className={"font-sans bg-gradient-to-tl from-black via-zinc-600/25 to-black"}>
+      <body className={"font-sans bg-black text-zinc-50 bg-gradient-to-tl from-black via-zinc-600/25 to-black"}>
         {children}
       </body>
     </html>
