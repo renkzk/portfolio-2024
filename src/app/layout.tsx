@@ -7,7 +7,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "renkzk",
   icons: {
-    icon: "/vercel.svg",
+    icon: "/shuttle.png",
   },
 }
 
